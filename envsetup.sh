@@ -57,11 +57,11 @@ function check_product()
     fi
 
     if (echo -n $1 | grep -q -e "^Clusty_") ; then
-       AOKP_BUILD=$(echo -n $1 | sed -e 's/^aokp_//g')
+       CLUSTY_BUILD=$(echo -n $1 | sed -e 's/^Clusty_//g')
     else
-       AOKP_BUILD=
+       CLUSTY_BUILD=
     fi
-    export AOKP_BUILD
+    export CLUSTY_BUILD
 
     CALLED_FROM_SETUP=true BUILD_SYSTEM=build/core \
         TARGET_PRODUCT=$1 \
@@ -467,7 +467,7 @@ function breakfast()
             # A buildtype was specified, assume a full device name
             lunch $target
         else
-            # This is probably just the AOKP model name
+            # This is probably just the Clusty model name
             lunch Clusty_$target-userdebug
         fi
     fi
@@ -517,7 +517,7 @@ function lunch()
     check_product $product
     if [ $? -ne 0 ]
 #    then
-#        # if we can't find a product, try to grab it off the AOKP github
+#        # if we can't find a product, try to grab it off the ClustyROM github
 #        T=$(gettop)
 #        pushd $T > /dev/null
 #        build/tools/roomservice.py $product
