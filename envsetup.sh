@@ -56,7 +56,7 @@ function check_product()
         return
     fi
 
-    if (echo -n $1 | grep -q -e "^aokp_") ; then
+    if (echo -n $1 | grep -q -e "^Clusty_") ; then
        AOKP_BUILD=$(echo -n $1 | sed -e 's/^aokp_//g')
     else
        AOKP_BUILD=
@@ -412,7 +412,7 @@ function print_lunch_menu()
        echo "  (ohai, koush!)"
     fi
     echo
-    if [ "z${AOKP_DEVICES_ONLY}" != "z" ]; then
+    if [ "z${CLUSTY_DEVICES_ONLY}" != "z" ]; then
        echo "Breakfast menu... pick a combo:"
     else
        echo "Lunch menu... pick a combo:"
@@ -426,7 +426,7 @@ function print_lunch_menu()
         i=$(($i+1))
     done
 
-    if [ "z${AOKP_DEVICES_ONLY}" != "z" ]; then
+    if [ "z${CLUSTY_DEVICES_ONLY}" != "z" ]; then
        echo "... and don't forget the bacon!"
     fi
 
@@ -448,10 +448,10 @@ function brunch()
 function breakfast()
 {
     target=$1
-    AOKP_DEVICES_ONLY="true"
+    CLUSTY_DEVICES_ONLY="true"
     unset LUNCH_MENU_CHOICES
     add_lunch_combo full-eng
-    for f in `/bin/ls vendor/aokp/vendorsetup.sh 2> /dev/null`
+    for f in `/bin/ls vendor/clusty/vendorsetup.sh 2> /dev/null`
         do
             echo "including $f"
             . $f
@@ -468,7 +468,7 @@ function breakfast()
             lunch $target
         else
             # This is probably just the AOKP model name
-            lunch aokp_$target-userdebug
+            lunch Clusty_$target-userdebug
         fi
     fi
     return $?
