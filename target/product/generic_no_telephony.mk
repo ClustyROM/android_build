@@ -31,13 +31,13 @@ PRODUCT_PACKAGES := \
     Exchange \
     Gallery2 \
     LatinIME \
-    Launcher2 \
     MusicFX \
     MusicVisualization \
     NoiseField \
     Provision \
     Phone \
-    ROMControl \
+    ClustyControl \
+	Clustypapers \
     Settings \
     Sync \
     SystemUI \

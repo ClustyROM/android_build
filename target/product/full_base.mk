@@ -34,13 +34,13 @@ PRODUCT_PACKAGES := \
 # Additional settings used in all AOSP builds
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.com.android.dateformat=MM-dd-yyyy \
-    ro.config.ringtone=Girtab.ogg \
-    ro.config.notification_sound=Proxima.ogg \
+    ro.config.ringtone=ClustyROM.ogg \
+    ro.config.notification_sound=Cobalt.ogg \
     ro.config.alarm_alert=Cesium.ogg
     
 
 # Put en_US first in the list, so make it default.
-PRODUCT_LOCALES := en_US
+PRODUCT_LOCALES := fr_FR
 
 # Get some sounds
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
